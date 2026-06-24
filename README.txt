@@ -1,4 +1,4 @@
-# A General Probabilistic Computational Framework Applied on Drake--Fermi--Brin Models of Technological Civilizations
+# A General Probabilistic Computational Framework Applied on Drake-Fermi-Brin Models of Technological Civilizations
 
 This repository contains code for generating, analyzing, and visualizing basic population models and supermodels, including PCA-based clustering analysis and importance-grid calculations.
 
