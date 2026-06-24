@@ -1,32 +1,92 @@
+# A General Probabilistic Computational Framework Applied on Drake--Fermi--Brin Models of Technological Civilizations
 
+This repository contains code for generating, analyzing, and visualizing basic population models and supermodels, including PCA-based clustering analysis and importance-grid calculations.
 
+## Environment Setup
 
-najprej uredimo okolje:
+Before running the code, enable LaTeX rendering and PDF figure export:
 
-    $env:CIV_USE_TEX="1"                                                 
-    >> $env:CIV_SAVE_PDF="1"
+```powershell
+$env:CIV_USE_TEX="1"
+$env:CIV_SAVE_PDF="1"
+```
 
-generiranje podatkov za osnovne in supermodele: 
+---
 
-    python main.py clean generate plot super 
+## Generate Data and Plots
 
-če hočemo samo osnovne:
+### Basic Models + Supermodels
 
-    python main.py clean generate plot
+Generate Monte Carlo samples, create plots, and build supermodels:
 
-importance grid: 
+```bash
+python main.py clean generate plot super
+```
 
-    python importance_grid.py --out outputs --dist lognormal --super-dist mixed  
+### Basic Models Only
 
-pca analiza:
+Generate and plot only the basic models:
 
-    python main.py pca
+```bash
+python main.py clean generate plot
+```
 
+---
 
-osnovni + supermodeli + pca:
+## Importance Grid Analysis
 
-    python main.py clean generate plot super pca
+Compute the importance grid for the selected distributions:
 
-za izris slikice ki kaže ratlike distribucij samo zaženemo: distributions.py
+```bash
+python importance_grid.py --out outputs --dist lognormal --super-dist mixed
+```
+
+You may change the distribution options as needed.
+
+---
+
+## PCA Analysis
+
+Run PCA-based clustering analysis on the generated samples:
+
+```bash
+python main.py pca
+```
+
+---
+
+## Complete Workflow
+
+Generate basic models, build supermodels, create plots, and run PCA analysis in a single command:
+
+```bash
+python main.py clean generate plot super pca
+```
+
+---
+
+## Distribution Comparison Figure
+
+To generate the figure comparing the different sampling distributions, run:
+
+```bash
+python distributions.py
+```
+
+---
+
+## Output
+
+Generated data, plots, PCA results, and analysis products are written to the `outputs/` directory.
+
+Typical output categories include:
+
+* Monte Carlo samples
+* Density surfaces and heatmaps
+* Lifetime and abundance distributions
+* Supermodel visualizations
+* PCA projections (2D and 3D)
+* Cluster summaries and centroids
+* Importance grids
 
 
